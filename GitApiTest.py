@@ -12,14 +12,18 @@ from GitApi import get_repo_info,my_brand
 class TestRepoAPI(unittest.TestCase):
 
     # Test case for when user does not exist
-    def testUserNotExist(self):
+    def testUserNotFound(self):
         # Calling the GithubApi function with a non-existent user ID
-        self.assertEqual(get_repo_info('XXXYYYZZZ111222333'), "GitHub user not found.")
+        self.assertEqual(get_repo_info('ASD123'), "GitHub user not found.")
 
     # Test case for testing success message by calling my username
-    def testUserSuccess(self):
+    def testRepoSuccess(self):
         # Calling the GithubApi function with an existing user ID
         self.assertEqual(get_repo_info('VishweshMS'), "Success")
+        
+       
+    def testNoRepos(self):
+        self.assertEqual(get_repo_info('Vishwesh119'), "No public repositories found.")
         
 if __name__ == '__main__':
    my_brand("HW 04a")
