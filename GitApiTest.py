@@ -14,7 +14,7 @@ class TestRepoAPI(unittest.TestCase):
     # Test case for when user does not exist
     def testUserNotFound(self):
         # Calling the GithubApi function with a non-existent user ID
-        self.assertEqual(get_repo_info('ASD123'), "GitHub user not found.")
+        self.assertEqual(get_repo_info('ASD4567898765434567'), "GitHub user not found.")
 
     # Test case for testing success message by calling my username
     def testRepoSuccess(self):
